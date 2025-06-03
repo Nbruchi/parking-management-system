@@ -1,0 +1,63 @@
+INTEGRATED SITUATION
+1.1 Project Description
+NEW MARS Company, located in Kigali City, is dedicated to advancing automation through innovative solutions that enhance safety and operational excellence. The company is developing a cutting-edge Automated Parking Management System that integrates Automatic Number Plate Recognition (ANPR) and Proximity Sensing. This AI-powered solution modernizes traditional parking management by enabling seamless entry, payment, and exit, ensuring a more efficient and secure experience for users.
+
+System Features
+1. Vehicle Registration: The system records the vehicle's license plate using an outward-facing camera at the gate and timestamps the entry.
+2. RFID-Based Payment: Parking costs RWF 500 per hour, with any duration under an hour rounded up. Payments are processed via RFID.
+3. Exit Authorization: Only vehicles with cleared payments are allowed to exit automatically.
+4. Proximity Sensing: Sensors at entry and exit points detect approaching vehicles.
+5. Automated Gate Operation:
+    - Entry: The gate opens when proximity detection and license plate registration are successful.
+    - Exit: The gate opens when proximity detection, plate recognition, and payment verification are successful.
+6. Alert System: Any manual gate tampering triggers an alarm and logs the incident, including the license plate, timestamp, and gate location (entry/exit).
+7. Basic Dashboard: Displays real-time logs of vehicle entries, exits, payments, and unauthorized exit attempts for monitoring purposes.
+
+1.2 Task: Develop the Automated Parking Management System
+As an engineer in Artificial Intelligence, Embedded Systems, and 3D Modeling, you are tasked with developing the Automated Parking Management System as follows:
+Sub-tasks
+(a) Develop a Vehicle Check-In Assistance Subsystem
+    - Design: Create a Data Flow Diagram (DFD) for the Vehicle Check-In Assistance Subsystem.
+    - Visualization: Develop a 3D model to visually demonstrate the parts of the automated gate while mounted together.
+    - Vehicle detection: Use a sensor to detect approaching vehicles and trigger the outward-facing camera.
+    - Data Capture: Implement Optical Character Recognition (OCR) to extract the vehicle's license plate number.
+    - Database Registration: Register the extracted license plate number in the database.
+    - Access Control: Upon successful registration, trigger the gate opening to allow entry.
+(b) Develop an RFID-Based Payment Subsystem
+    - PoS Device Development: Write code for the Point of Sale (PoS) device used to top-up the RFID cards.
+    - RFID Card Top-Up: Use the PoS system to load sufficient balance onto an RFID card for demonstration purposes.
+    - RFID Payment Processing: Write code to process RFID-based payments by referencing parking logs to determine the duration of stay and calculate the required fee.
+(c) Develop a Vehicle Check-Out Assistance Subsystem
+    - Vehicle Detection: Use a sensor to detect an approaching vehicle and activate the inward-facing camera.
+    - License Plate Recognition: Implement LPR to identify the vehicle's license plate.
+    - Payment Verification: Develop code to check if the vehicle has cleared its parking fees.
+    - Gate Control: If verification is successful, trigger the automatic gate opening to allow exit.
+(d) Develop an Alert Subsystem for Unauthorized Vehicle Exit
+    - Unauthorized Exit Detection: Write code to detect when a vehicle with pending payment has crossed the gate.
+    - Alarm Activation: Trigger a siren or buzzer to alert security personnel.
+    - Incident Logging: Record the incident in the database for future reference.
+(e) Develop a Basic Dashboard for System Monitoring
+    - Real-Time Logs: Display vehicle check-ins, check-outs, payments, and alerts.
+    - UI: Develop a simple web-based interface.
+    - Data Retrieval: Fetch relevant data from the parking log and database.
+    - Alert Display: Highlight unauthorized exit attempts with timestamps and plate numbers.
+1.3 Instructions
+(a) Hardware Requirements:
+    - Laptop with functioning camera (x1)
+    - Microcontroller (x1), preferably Arduino UNO with USB cable
+    - RFID Development Kit (RFID Reader x1, RFID Card x1, male-to-female jumper wires x7)
+    - Automated Gate Demo Kit: Barrier Stand (x2), Barrier Stick (x1), Stepper Motor with ULN2003AN driver (x1), Ultrasonic Sensor (x1), Piezo Buzzer (x1), Red LED (x1), Green LED (x1), 150-ohm Resistors (x2), Mini Breadboard (x1), Male-to-Female Jumper wires (x18), Male-to-Male Jumper wires (x18), Toy Car with license plate (x1)
+(b) Software Requirements:
+    - Programming Languages: Python, C/C++, HTML, CSS, JavaScript, SQL
+    - Libraries and Frameworks: OpenCV, pytesseract, pyserial, sqlite3, MySQL connector-python, Flask, Django, logging, matplotlib, Wire.h, Stepper.h, MFRC522, Bootstrap, Plotly, Chart.js
+    - Testing and Development Tools: Postman, cURL
+1.4 Additional Information
+(a) Time Allocated: 8 hours (480 minutes) distributed as follows:
+    - Vehicle Check-In Assistance: 100 minutes
+    - RFID-Based Payment Subsystem: 90 minutes
+    - Vehicle Check-Out Assistance: 100 minutes
+    - Unauthorized Exit Alert Subsystem: 60 minutes
+    - Basic Dashboard: 80 minutes
+    - Final Testing and Debugging: 50 minutes
+(b) Materials Provided: Laptop with functioning camera (x1), Microcontroller with USB cable (x1), RFID Reader (x1), RFID Card (x1), male-to-female jumper wires (x7), Barrier Stand (x2), Barrier Stick (x1), Stepper Motor with ULN2003AN driver (x1), Ultrasonic Sensor (x1), Piezo Buzzer (x1), Red LED (x1), Green LED (x1), 150-ohm Resistors (x2), Mini Breadboard (x1), Male-to-Female Jumper wires (x18), Male-to-Male Jumper Wires (x18), Toy Car with license plate (x1).
+
