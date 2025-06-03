@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parking Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Parking Management Dashboard</h1>
+      </header>
+
+      <section class="stats">
+        <h2>Today's Summary</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>Total Entries</h3>
+            <p>{{ stats.total_entries if stats else 0 }}</p>
+          </div>
+          <div class="stat-card">
+            <h3>Total Exits</h3>
+            <p>{{ stats.total_exits if stats else 0 }}</p>
+          </div>
+          <div class="stat-card">
+            <h3>Total Revenue</h3>
+            <p>RWF {{ "%.2f"|format(stats.total_revenue) if stats else 0 }}</p>
+          </div>
+          <div class="stat-card">
+            <h3>Unauthorized Exits</h3>
+            <p>{{ stats.unauthorized_exits if stats else 0 }}</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="logs">
+        <h2>Recent Activities</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Plate</th>
+              <th>Type</th>
+              <th>Status</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for log in logs %}
+            <tr
+              class="{{ 'unauthorized' if log.is_unauthorized_exit else '' }}"
+            >
+              <td>{{ log.entry_time }}</td>
+              <td>{{ log.plate_number }}</td>
+              <td>{{ 'Exit' if log.exit_time else 'Entry' }}</td>
+              <td>
+                {% if log.is_unauthorized_exit %} ⚠️ Unauthorized {% elif
+                log.payment_status %} ✓ Paid {% else %} Pending {% endif %}
+              </td>
+              <td>
+                {{ "RWF %.2f"|format(log.payment_amount) if log.payment_amount
+                else '-' }}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+# For conda installation:
+# conda create -n parking-dashboard python=3.10
+# conda activate parking-dashboard
+# conda install flask python-dotenv
+
+# Or using pip within conda environment:
+flask>=3.0.2
+werkzeug>=3.0.1
+jinja2>=3.1.3
+itsdangerous>=2.1.2
+click>=8.1.7
+python-dotenv>=1.0.1 
